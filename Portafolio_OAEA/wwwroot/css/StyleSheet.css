@@ -1,0 +1,141 @@
+﻿/* Estilo general para el cuerpo de la página */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    margin: 0;
+    padding: 0;
+    animation: cambioColor 10s linear infinite; /* Aplicar la animación al fondo */
+}
+
+/* Estilo para la barra de navegación */
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 0;
+    text-align: center;
+}
+
+.Logo img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%; /* Para que la imagen sea redonda */
+}
+
+/* Estilo para las secciones */
+section {
+    padding: 40px 0;
+}
+
+.container {
+    text-align: center;
+}
+
+/* Estilo para los títulos */
+h2 {
+    font-size: 2em;
+    margin: 0;
+}
+
+/* Estilo para los subtítulos */
+h3 {
+    font-size: 1.5em;
+    color: #333;
+}
+
+/* Estilo para el párrafo de bienvenida */
+p {
+    font-size: 1.2em;
+    margin: 20px 0;
+}
+
+/* Estilo para los enlaces */
+a {
+    text-decoration: none;
+    color: #007BFF;
+}
+
+    a:hover {
+        text-decoration: underline;
+    }
+
+/* Estilo para los proyectos */
+.proyecto {
+    margin: 20px 0;
+}
+
+    .proyecto h3 {
+        font-size: 1.5em;
+    }
+
+/* Estilo para las redes sociales */
+.redes-sociales {
+    list-style: none;
+    padding: 0;
+}
+
+    .redes-sociales li {
+        display: inline;
+        margin-right: 20px;
+    }
+
+/* Estilo para el pie de página */
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 0;
+    text-align: center;
+}
+
+/* Estilo para la tabla */
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+/* Estilo para la fila de encabezado de la tabla */
+tr.header {
+    background-color: #333;
+    color: #fff;
+}
+
+/* Define la animación de cambio de color del fondo */
+@keyframes cambioColor {
+    0% {
+        background: linear-gradient(135deg, #FF5733, #33FF57); /* Cambia de color en 0% de la animación */
+    }
+
+    25% {
+        background: linear-gradient(135deg, #3373FF, #FF5733); /* Cambia de color en 25% de la animación */
+    }
+
+    50% {
+        background: linear-gradient(135deg, #33FF57, #3373FF); /* Cambia de color en 50% de la animación */
+    }
+
+    75% {
+        background: linear-gradient(135deg, #FF5733, #33FF57); /* Cambia de color en 75% de la animación */
+    }
+
+    100% {
+        background: linear-gradient(135deg, #3373FF, #33FF57); /* Cambia de color en 100% de la animación */
+    }
+}
+
+
+.redes-sociales a i {
+    color: white;
+}

@@ -12,6 +12,8 @@ namespace Portafolio_OAEA.Models
         public string Correo { get; set; }
   
         public string Descripcion { get; set; }
-       
+
+
+      
     }
 }

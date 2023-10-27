@@ -1,0 +1,48 @@
+﻿@model List<ProyectoModel>;
+
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Listado de Proyectos</title>
+        <link rel="stylesheet" href="~/css/StyleSheetProyecto.css">
+    </head>
+    <body>
+        <h1>Listado de Proyectos</h1>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Descripción</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Proyecto 1</td>
+                    <td>Descripción del Proyecto 1</td>
+                </tr>
+                <tr>
+                    <td>Proyecto 2</td>
+                    <td>Descripción del Proyecto 2</td>
+                </tr>
+                <!-- Puedes iterar sobre los proyectos y generar estas filas dinámicamente -->
+            </tbody>
+        </table>
+
+        <p><a href="/">Volver al inicio</a></p>
+
+
+          <tbody>
+        @foreach (var item in Model)
+        {
+                <tr>
+                    <td>@item.NombreProyecto</td>
+                   <td>@item.FechaCreado</td>
+                    
+                    <!-- Agrega más columnas según sea necesario -->
+                </tr>
+        }
+    </tbody>
+    </body>
+    </html>
