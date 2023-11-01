@@ -1,0 +1,97 @@
+﻿@model List<Portafolio_OAEA.Models.YoutubeModel>;
+
+@{
+    ViewBag.Title = "Videos de Youtube";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Videos de Youtube</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        /* Fondo en color #1C1C1C para todo el cuerpo de la página */
+
+
+        /* Estilo para el botón de búsqueda */
+        .btn-danger {
+            background-color: #ff0000; /* Rojo característico de YouTube */
+            color: #fff;
+            border: none;
+            transition: background-color 0.3s ease; /* Transición de color en 0.3 segundos */
+        }
+
+            /* Agrega un resplandor al botón de búsqueda al pasar el mouse sobre él */
+            .btn-danger:hover {
+                background-color: #cc0000; /* Rojo ligeramente más oscuro al pasar el mouse */
+                box-shadow: 0 0 5px 2px #cc0000;
+            }
+
+        /* Estilo para alinear la información a la izquierda y reducir el tamaño */
+        .video-info {
+            text-align: left;
+            font-size: 14px; /* Tamaño de fuente más pequeño */
+        }
+    </style>
+
+</head>
+<body>
+    <h2>Videos de Youtube</h2>
+
+    @using (Html.BeginForm("Search", "Video", FormMethod.Post))
+    {
+        <div class="form-group">
+            @Html.TextBox("searchTerm", null, new { @class = "form-control" })
+        </div>
+        <button type="submit" class="btn btn-danger">Buscar</button>
+    }
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 video-info">
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>Título</th>
+                            <th>Imagen</th>
+                            <th>Reproducir</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @if (Model != null)
+                        {
+                            @foreach (var video in Model)
+                            {
+                                <tr>
+                                    <td>@video.Titulo</td>
+                                    <td><img src="@video.ImageUrl" width="100px" /></td>
+                                    <td>
+                                        <a href="javascript:reproducirVideo('@video.VideoId')" class="btn btn-primary">Reproducir</a>
+                                    </td>
+                                </tr>
+                            }
+                        }
+                    </tbody>
+                </table>
+            </div>
+            <div class="col-md-6">
+                <iframe id="frameVideo" width="100%" height="450px" src="" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+            </div>
+        </div>
+    </div>
+
+    <!-- Agrega el enlace al JavaScript de Bootstrap y jQuery (opcional) -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+
+    <script>
+        function reproducirVideo(VideoId) {
+            var srcVideo = "https://www.youtube.com/embed/" + VideoId + "?autoplay=1&loop=1";
+            $("#frameVideo").attr("src", srcVideo);
+        }
+    </script>
+</body>
+</html>

@@ -15,7 +15,7 @@ namespace Portafolio_OAEA.Datos
             using (var conexion = new SqlConnection(cn.GetCadenaSql()))
             {
                 conexion.Open();
-                SqlCommand cmd = new SqlCommand("sp_Listar", conexion);
+                SqlCommand cmd = new SqlCommand("Sp_Lista", conexion);
                 cmd.CommandType = CommandType.StoredProcedure;
                 using (var dr = cmd.ExecuteReader())
                 {
@@ -26,7 +26,7 @@ namespace Portafolio_OAEA.Datos
                             idProyecto = Convert.ToInt32(dr["idProyecto"]),
                             NombreProyecto = dr["NombreProyecto"].ToString(),
                             FechaCreado = dr["FechaCreado"].ToString(),
-
+                            Descripcion = dr["Descripcion"].ToString()
                         });
 
                     }

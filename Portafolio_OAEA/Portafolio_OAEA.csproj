@@ -11,11 +11,13 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="Google.Apis.YouTube.v3" Version="1.63.0.3205" />
     <PackageReference Include="System.Data.SqlClient" Version="4.8.5" />
   </ItemGroup>
 
   <ItemGroup>
     <Folder Include="CSS\" />
+    <Folder Include="Views\Streming\" />
   </ItemGroup>
 
 </Project>
