@@ -16,8 +16,8 @@ header {
 }
 
 .Logo img {
-    width: 100px;
-    height: 100px;
+    width: 200px;
+    height: 200px;
     border-radius: 50%; /* Para que la imagen sea redonda */
 }
 
@@ -28,6 +28,7 @@ section {
 
 .container {
     text-align: center;
+    ra
 }
 
 /* Estilo para los títulos */
@@ -110,6 +111,12 @@ tr:nth-child(even) {
 tr.header {
     background-color: #333;
     color: #fff;
+}
+
+.Perfil {
+    width: 1000px;
+    height: 1000px;
+    
 }
 
 /* Define la animación de cambio de color del fondo */
